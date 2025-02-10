@@ -35,7 +35,7 @@ def generate_otp(user_id):
     """Generate an OTP and store it in Redis for local testing."""
     import random
     otp = str(random.randint(100000, 999999))
-    redis_client.setex(f"OTP_{user_id}", 300, otp)  # Store OTP for 5 mins
+    #redis_client.setex(f"OTP_{user_id}", 300, otp)  # Store OTP for 5 mins
     return otp
 
 mfa_challenge_generator = Agent(
