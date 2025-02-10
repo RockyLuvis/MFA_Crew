@@ -101,7 +101,7 @@ crew = Crew(
 
 # ✅ Flask API for Local Testing
 app = Flask(__name__)
-run_with_ngrok(app)
+#run_with_ngrok(app)
 
 @app.route("/")
 def home():
@@ -141,6 +141,7 @@ def mfa_verify():
 
 if __name__ == '__main__':
     #app.run()  # Remove host and port arguments
+    import os
     port = int(os.environ.get("PORT", 10000))  # Ensure it binds to the correct port
     app.run(host='0.0.0.0', port=port, debug=True)
     # or app.run(port=5000, debug=True) if you need to specify a port
