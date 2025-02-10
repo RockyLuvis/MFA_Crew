@@ -1,6 +1,8 @@
 from crewai import Crew, Agent, Task
-from langchain.chat_models import ChatOpenAI
+#from langchain.chat_models import ChatOpenAI
 from flask import Flask, request, jsonify
+from langchain_community.chat_models import ChatOpenAI
+
 
 from flask_ngrok import run_with_ngrok # import run_with_ngrok
 import redis
@@ -134,5 +136,7 @@ def mfa_verify():
 #    app.run(host='0.0.0.0', port=5000, debug=True)
 
 if __name__ == '__main__':
-    app.run()  # Remove host and port arguments
+    #app.run()  # Remove host and port arguments
+    port = int(os.environ.get("PORT", 10000))  # Ensure it binds to the correct port
+    app.run(host='0.0.0.0', port=port, debug=True)
     # or app.run(port=5000, debug=True) if you need to specify a port
