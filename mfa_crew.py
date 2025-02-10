@@ -103,6 +103,10 @@ crew = Crew(
 app = Flask(__name__)
 run_with_ngrok(app)
 
+@app.route("/")
+def home():
+    return "✅ MFA CrewAI API is Live on Render!"
+
 # ✅ Login API - Calls Risk-Based MFA Analysis
 @app.route('/login', methods=['POST'])
 def login():
