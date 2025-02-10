@@ -12,11 +12,13 @@ import openai
 load_dotenv()
 import os
 
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
 # ✅ Connect to Local Redis (Ensure Redis is Running Locally)
 redis_client = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 # ✅ AI Model for CrewAI
-llm = ChatOpenAI(model="gpt-4-turbo", openai_api_key=OPENAI_API_KEY)
+llm = ChatOpenAI(model="gpt-4-turbo", openai_api_key)
 
 # 🛡️ 1️⃣ MFA Risk Analyzer - Determines whether MFA is required
 mfa_risk_analyzer = Agent(
