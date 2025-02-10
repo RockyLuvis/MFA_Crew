@@ -5,3 +5,4 @@ boto3
 redis
 langchain_community
 flask_ngrok
+gunicorn
